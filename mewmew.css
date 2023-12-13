@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500|PT+Sans+Narrow:400,700|Play:400,700|Ubuntu+Condensed&display=swap&subset=cyrillic");
+header {
+  align-items: center;
+  height: 15%;
+  width: 100%;
+  margin-bottom: 1%;
+  background-color: hsla(0, 0%, 100%, 1);
+  box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav {
+  padding-top: 25px;
+  display: flex;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2.824vh;
+  color: hsla(0, 0%, 30%, 1);
+  background-color: black;
+}
+.petswipe {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 45%;
+  flex-direction: column;
+  background: #efefef;
+  align-items: center;
+}
+.breadcrumb {
+  display: flex;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  height: 40px;
+  transform: translateY(-50%);
+  z-index: 1;
+  justify-content: center;
+}
+.breadcrumb__item {
+  height: 100%;
+  background-color: white;
+  color: #252525;
+  font-family: "Oswald", sans-serif;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transform: skew(-21deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  margin: 5px;
+  padding: 0 40px;
+  cursor: pointer;
+  display: flex;
+}
+.controls {
+  width: 100%;
+  height: auto;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.control-image {
+  height: auto;
+  width: 10%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+button {
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  background-color: buttonface;
+  margin: 0em;
+  padding-block: 1px;
+  padding-inline: 6px;
+}
+.circle-button {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  color: #252525;
+  font-family: "Oswald", sans-serif;
+  border-radius: 50%; /* Use 50% border-radius for a circle */
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  transform: skew(-21deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  margin: 5px;
+  padding: 0 40px;
+  cursor: pointer;
+}
+
+.breadcrumb__item:hover {
+  background: #490099;
+  color: #fff;
+}
+
+.breadcrumb__inner {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  z-index: 2;
+  transform: skew(21deg);
+}
+
+.breadcrumb__title {
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media all and (max-width: 1000px) {
+  .breadcrumb {
+    height: 35px;
+  }
+
+  .breadcrumb__title {
+    font-size: 11px;
+  }
+  .breadcrumb__item {
+    padding: 0 30px;
+  }
+}
+
+@media all and (max-width: 710px) {
+  .breadcrumb {
+    height: 30px;
+  }
+  .breadcrumb__item {
+    padding: 0 20px;
+  }
+}
+section {
+  width: 80vh;
+  height: 70vh;
+  border-radius: 1rem;
+  background-color: hsla(0, 0%, 100%, 1);
+  box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#currentImg {
+  max-width: 100%;
+  max-height: 80%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.scroll-animation {
+  animation: scrollAnimation .6s linear; /* Adjust the duration as needed */
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.item-details {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.control-image:hover {
+  transform: scale(1.1) rotate(5deg); /* Adjust the scale and rotation values as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow on hover */
+}

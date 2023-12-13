@@ -1,0 +1,102 @@
+:root {
+  --surface1: hsl(0 0% 90%);
+  --surface2: hsl(0 0% 100%);
+
+  --text1: hsl(0 0% 20%);
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2rem;
+  display: grid;
+  place-content: center;
+  font-family: system-ui, sans-serif;
+  background-color: var(--surface1);
+  color: var(--text1);
+}
+
+.overflow-x {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid hsl(0 0% 80%);
+  border-radius: 1ex;
+  background-color: var(--surface2);
+  padding: 2rem;
+}
+.back {
+  background-image: url("../icons/back.png");
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  border-radius: 25%;
+  padding: 10px;
+  border: 3px solid black;
+}
+.pet-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 10ch;
+  gap: 2rem;
+
+  & > figure {
+    display: grid;
+    gap: 1ex;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:last-child::after {
+      content: "";
+      position: absolute;
+      width: 2rem;
+      height: 100%;
+      right: -2rem;
+      inline-size: 2rem;
+      block-size: 100%;
+    }
+
+    & > picture {
+      display: inline-block;
+      inline-size: 10ch;
+      block-size: 10ch;
+      border-radius: 50%;
+
+      background: radial-gradient(hsl(0 0% 0% / 15%) 60%, transparent 0),
+        radial-gradient(white 65%, transparent 0),
+        linear-gradient(to top right, orange, deeppink);
+
+      & > img {
+        display: block;
+        inline-size: 100%;
+        block-size: 100%;
+        object-fit: cover;
+        clip-path: circle(42%);
+      }
+    }
+
+    & > figcaption {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500;
+    }
+  }
+}
+
